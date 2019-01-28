@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chance Baars</title>
+</head>
+<body>
+    <div>
+        <code>
+            <h1>By Chance Baars</h1>
+            <p>chancebaars@gmail.com</p>
+        </code>
+        List:
+        <ul id='list'>
+            
+        </ul>
+        <input id="data" type="text" name="data"/>
+        <button id="add-button">Insert</button>
+    </div>
+</body>
+
+<script>
+    let value = () => {
+        return document.getElementById('data').value;
+    };
+    document.getElementById("add-button").addEventListener("click", addValue);
+
+    function addValue() {
+        let item = document.createElement("LI")
+        let data = value()
+        if (data === "" || !data.trim()) {
+            return alert("Please, enter a value in the input form.")
+        }
+        item.innerHTML = value();
+        document.getElementById('data').value = "";
+        document.getElementById('list').appendChild(item)
+        document.getElementsByTagName("LI")[2].style.color = "red"
+        return true;
+    }
+
+</script>
+</html>
